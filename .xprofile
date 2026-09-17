@@ -1,0 +1,4 @@
+export GTK_THEME=Materia-dark
+export XDG_CURRENT_DESKTOP=i3
+gsettings set org.gnome.desktop.interface icon-theme 'Iceglass-4.12'
+gsettings set org.gnome.desktop.interface gtk-theme 'Materia-dark'
