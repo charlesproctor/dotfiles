@@ -35,6 +35,6 @@
 - picom
 
 ## Notes
-- Run `wal -i Pictures/flowers.jpg` after fresh install to generate pywal colors
-- MPD runs as user, not system service: run `mpd` manually or add to startup
+- Run "wal -i Pictures/flowers.jpg" after fresh install to generate pywal colors
+- MPD runs as user, not system service: run "mpd" manually or add to startup
 - Iceglass icons: [ttps://www.gnome-look.org/p/1002546]
