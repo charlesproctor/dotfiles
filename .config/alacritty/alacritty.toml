@@ -1,0 +1,32 @@
+[general]
+import = ["~/.config/alacritty/themes/chicago95.toml"]
+
+[window]
+decorations = "None"
+opacity = 0.9   # must be <=1.0 for Intel HD 3000
+blur = true    # enable only if you run a compositor
+
+[window.padding]
+x = 10
+y = 10
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "Terminus"
+style = "Regular"
+
+[font.bold]
+family = "Terminus"
+style = "Bold"
+
+[font.italic]
+family = "Terminus"
+style = "Italic"
+
+[font.bold_italic]
+family = "Terminus"
+
+[env]
+WINIT_X11_SCALE_FACTOR = "0.9"

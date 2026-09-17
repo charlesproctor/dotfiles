@@ -1,0 +1,86 @@
+# ────────────── i3-gaps Retro Config ──────────────
+set $mod Mod4
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+
+workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+
+font pango:Terminus 10
+bindsym $mod+Shift+r reload
+new_window none
+default_border none
+
+# Power menu
+bindsym $mod+p exec ~/.config/rofi/powermenu.sh
+bindsym $mod+s exec scrot --delay 5 ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png
+
+# Gaps
+gaps inner 8
+gaps outer 0
+
+# Terminal
+bindsym Control+Mod1+t exec alacritty
+bindsym $mod+d exec ~/.config/rofi/pinned.sh
+bindsym $mod+e exec rofi -show drun -show-icons
+bindsym $mod+q kill
+bindsym $mod+shift+x exec i3lock
+
+# Focus windows (vim-style)
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move windows (vim-style with Shift — mirrors focus keys)
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Move container to workspace and follow it
+bindsym $mod+Shift+1 move container to workspace $ws1 ; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2 ; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3 ; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4 ; workspace $ws4
+
+# Workspace switching
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+
+# Brightness (requires brightnessctl: sudo pacman -S brightnessctl)
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+
+# Volume (requires pamixer: sudo pacman -S pamixer)
+bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i 5
+bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer -d 5
+bindsym XF86AudioMute         exec --no-startup-id pamixer -t
+bindsym XF86AudioMicMute      exec --no-startup-id pamixer --default-source -t
+
+bindsym $mod+minus exec --no-startup-id pamixer -i 5
+bindsym $mod+equal    exec --no-startup-id pamixer -d 5
+
+# Floating windows
+for_window [window_type="dialog"] floating enable
+
+# Toggle floating for the focused window
+bindsym $mod+Shift+space floating toggle
+
+# Move floating window with mouse (hold $mod and left-click)
+floating_modifier $mod
+
+# Autostart — kill existing polybar before relaunching to prevent duplicates/glitches
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.local/bin/start-session
+
+exec --no-startup-id feh --bg-scale ~/Pictures/flowers.jpg
+exec --no-startup-id nm-applet
+exec --no-startup-id picom

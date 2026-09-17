@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+WALL="$HOME/Pictures/flowers.jpg"
+
+# generate wal colors first
+wal -i "$WALL"
+
+# set wallpaper
+feh --bg-scale "$WALL"
+
+# small safety delay
+sleep 0.5
+
+# start rmpc AFTER wal exists
+pgrep rmpc >/dev/null || rmpc &

@@ -1,0 +1,7 @@
+[ui]
+show_borders = false
+
+[album_art]
+enabled = true
+max_width = 350
+max_height = 350
