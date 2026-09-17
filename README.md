@@ -1,6 +1,6 @@
-# Dotfiles - i3 Arch Linux setup
+## Dotfiles - i3 Arch Linux setup
 
-## WM / Display
+### WM / Display
 - i3-gaps
 - polybar
 - rofi
@@ -37,4 +37,4 @@
 ## Notes
 - Run "wal -i Pictures/flowers.jpg" after fresh install to generate pywal colors
 - MPD runs as user, not system service: run "mpd" manually or add to startup
-- Iceglass icons: [ttps://www.gnome-look.org/p/1002546]
+- Iceglass icons: https://www.gnome-look.org/p/1002546
