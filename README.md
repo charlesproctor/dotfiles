@@ -1,4 +1,4 @@
-# Dotfiles — i3 Arch Linux setup
+# Dotfiles - i3 Arch Linux setup
 
 ## WM / Display
 - i3-gaps
